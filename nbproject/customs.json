@@ -1,0 +1,15 @@
+{
+    "elements": {
+        "christmas-tree": {
+            "attributes": {
+                "lights": {}
+            }
+        },
+        "k-led-app": {}
+    },
+    "attributes": {
+        "(click)": {
+            "context": "button"
+        }
+    }
+}
