@@ -1,4 +1,5 @@
 import {Component, Input} from 'angular2/core';
+import {Light, getRGBStyle} from '../common';
 @Component({
     selector: 'christmas-tree',
     template: `
@@ -28,16 +29,11 @@ export class ChristmasTree {
         }
     }
 
-    getStyleForLight(light: Light, index: number) {
-        return { background: `rgb(${light.r},${light.g},${light.b})` };
+    getStyleForLight(light: Light) {
+        return getRGBStyle(light);
     }
     ngOnChanges(changes) {
         this.ngOnInit();
     }
 
-}
-export interface Light {
-    r: number;
-    g: number;
-    b: number;
 }

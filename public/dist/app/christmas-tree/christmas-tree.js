@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', '../common'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, common_1;
     var ChristmasTree;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
             }],
         execute: function() {
             ChristmasTree = (function () {
@@ -33,8 +36,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         }
                     }
                 };
-                ChristmasTree.prototype.getStyleForLight = function (light, index) {
-                    return { background: "rgb(" + light.r + "," + light.g + "," + light.b + ")" };
+                ChristmasTree.prototype.getStyleForLight = function (light) {
+                    return common_1.getRGBStyle(light);
                 };
                 ChristmasTree.prototype.ngOnChanges = function (changes) {
                     this.ngOnInit();

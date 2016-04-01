@@ -5,6 +5,14 @@
                 <div class="card-block">
                     <h4 class="card-title">Create Animation</h4>
                     <p class="card-text">Animation Creation Here</p>
+                    <label>Colors:</label>
+                    <select [(ngModel)]="selectedColor">
+                        <option>Select A Color</option>
+                        <option [value]="color" *ngFor="#color of colors"  [ngStyle]="getRGBStyle(color)">{{color.name}}</option>
+                    </select>
+                    <div *ngIf="selectedColor" [ngStyle]="getRGBStyle(selectedColor)">
+                        <div style="height: 100px; width: 100px;"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -21,6 +29,7 @@
                 <div class="card-block">
                     <h4 class="card-title">Preview</h4>
                     <p class="card-text">Heres a preview of the tree.</p>
+                    
                     <christmas-tree [lights]="lights"></christmas-tree>
                     <button (click)="randomizeColors()" class="btn btn-primary">Randomize</button>
                 </div>
